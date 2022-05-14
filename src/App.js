@@ -24,13 +24,13 @@ const handelAdd = (newm) => {
  
 const handleRating = (rate) => {
   setRate(rate)
-
+ 
   // other logic
 }
 
 // const filterstars =(rating)=>{
 // setVml(mvls.filter((el)=>el.rating === rating));
-//   }
+//   }  
 
   return (
     <div className="App">

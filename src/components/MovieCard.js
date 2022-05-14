@@ -6,8 +6,7 @@ import {Link, link} from 'react-router-dom'
 const MovieCard = ({el}) => {
   return (
 /* <link to ={`/desc/${movie.Id}`}></link> */
-<Link to={`/desc/${el.id}`}  style={{ textDecoration:' none',
-      color:' inherit'}} > 
+<Link to={`/desc/${el.id}`}  style={{ textDecoration:' none', color:' inherit'}} > 
     <Card className='cd' >
    <Card.Img variant="top" src={el.url} />
    <Card.Body >

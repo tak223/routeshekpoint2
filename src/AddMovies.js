@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import {useState} from 'react';
 import { Rating } from 'react-simple-star-rating'
 import { v4 as uuidv4 } from 'uuid';
+/************************     the model**************************************** */
 const customStyles = {
     content: {
       top: '50%',
@@ -18,7 +19,6 @@ const customStyles = {
   Modal.setAppElement('#root');
   
 const AddMovies = ({handelAdd}) => {
-    //************************ */
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
   
@@ -34,7 +34,6 @@ const AddMovies = ({handelAdd}) => {
     function closeModal() {
       setIsOpen(false);
     }
-    //******************************************************** */
     const submit = (e) => {
         e.preventDefault();
         handelAdd({...form,rating:rating,id: uuidv4()} );
@@ -50,7 +49,7 @@ const AddMovies = ({handelAdd}) => {
         {
             title:'',
             url:'',
-            description:''
+            description:'',
 
         }
     )
@@ -67,7 +66,7 @@ const AddMovies = ({handelAdd}) => {
     
     return (
       <div>
-        <button className='myButton' onClick={openModal}>Open Modal</button>
+        <button className='myButton' onClick={openModal}>add a movie</button>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -82,7 +81,7 @@ const AddMovies = ({handelAdd}) => {
           <p> title</p>
             <input type='text' onChange={onchange} name='title' required />
             <p> description</p>
-            <input type='text'  onChange={onchange} name=' description'  required/>
+            <input type='text'  onChange={onchange} name='description'  required/>
             <p> picture</p>
             <input type='url'  onChange={onchange} name='url'  required />
             <Rating onClick={handleRating} ratingValue={rating}/* Available Props */  style={{margin:'20px'}} />
